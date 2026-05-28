@@ -1,0 +1,64 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<section class="opening-grid mb-4">
+    <div class="hero hero-compact">
+        <div>
+            <span class="hero-kicker">Central administrativa</span>
+            <h1>Gestao Academica</h1>
+            <p>Um ambiente direto para organizar pessoas, turmas e componentes curriculares com mais clareza no dia a dia da secretaria.</p>
+            @if (User.Identity?.IsAuthenticated == true)
+            {
+                <a class="btn btn-light mt-3" asp-controller="Aluno" asp-action="Index">Entrar no painel</a>
+            }
+            else
+            {
+                <a class="btn btn-light mt-3" asp-controller="Auth" asp-action="Login">Acessar sistema</a>
+            }
+        </div>
+    </div>
+
+    <aside class="quick-panel">
+        <span class="panel-label">Rotina principal</span>
+        <h2>Cadastre, confira e mantenha os dados atualizados.</h2>
+        <p>Use os modulos abaixo para acompanhar registros essenciais sem perder tempo procurando telas.</p>
+        <div class="quick-actions">
+            <a asp-controller="Aluno" asp-action="Index">Alunos</a>
+            <a asp-controller="Professor" asp-action="Index">Docentes</a>
+            <a asp-controller="Disciplina" asp-action="Index">Disciplinas</a>
+        </div>
+    </aside>
+</section>
+
+<div class="module-board">
+    <article class="module-card module-card-wide">
+        <div class="entity-icon">AL</div>
+        <div>
+            <span class="module-tag">Vida escolar</span>
+            <h2>Alunos em acompanhamento</h2>
+            <p>Inclua novos estudantes, revise CPF, curso, data de nascimento e mantenha a matricula gerada pelo sistema.</p>
+            <a asp-controller="Aluno" asp-action="Index">Abrir alunos</a>
+        </div>
+    </article>
+
+    <article class="module-card">
+        <div class="entity-icon">PR</div>
+        <div>
+            <span class="module-tag">Equipe docente</span>
+            <h2>Professores</h2>
+            <p>Organize docentes por area, SIAPE e dados pessoais conferidos.</p>
+            <a asp-controller="Professor" asp-action="Index">Ver professores</a>
+        </div>
+    </article>
+
+    <article class="module-card module-card-accent">
+        <div class="entity-icon">DI</div>
+        <div>
+            <span class="module-tag">Oferta curricular</span>
+            <h2>Disciplinas</h2>
+            <p>Relacione professor, periodo e carga horaria de cada componente.</p>
+            <a asp-controller="Disciplina" asp-action="Index">Gerir disciplinas</a>
+        </div>
+    </article>
+</div>

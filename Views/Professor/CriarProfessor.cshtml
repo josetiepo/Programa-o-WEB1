@@ -1,0 +1,56 @@
+@model Professor
+
+@{
+    ViewData["Title"] = "Cadastrar professor";
+}
+
+<div class="form-panel">
+    <span class="panel-label">Novo registro docente</span>
+    <h1 class="section-title">Cadastrar professor</h1>
+    <p class="form-intro">Informe identificacao, area e SIAPE para disponibilizar o professor nas disciplinas.</p>
+    <form method="post" asp-controller="Professor" asp-action="CriarProfessor">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="form-group">
+            <label asp-for="Nome"></label>
+            <input asp-for="Nome" class="form-control" />
+            <span asp-validation-for="Nome" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Cpf">CPF</label>
+            <input asp-for="Cpf" class="form-control" placeholder="000.000.000-00" />
+            <span asp-validation-for="Cpf" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Siape">SIAPE</label>
+            <input asp-for="Siape" class="form-control" />
+            <span asp-validation-for="Siape" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DataNascimento">Data de nascimento</label>
+            <input asp-for="DataNascimento" type="date" class="form-control" />
+            <span asp-validation-for="DataNascimento" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Area"></label>
+            <select asp-for="Area" class="form-control">
+                <option value="">Selecione a area</option>
+                <option value="Computacao">Computacao</option>
+                <option value="Agronomia">Agronomia</option>
+                <option value="Matematica">Matematica</option>
+                <option value="Gestao Academica">Gestao Academica</option>
+            </select>
+            <span asp-validation-for="Area" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar professor</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

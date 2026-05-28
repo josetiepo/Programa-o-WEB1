@@ -1,0 +1,37 @@
+@model List<Academico.Models.Disciplina>
+
+@{
+    ViewData["Title"] = "Disciplinas";
+}
+
+<div class="page-heading">
+    <div>
+        <span class="panel-label">Grade curricular</span>
+        <h1 class="section-title mb-1">Disciplinas ofertadas</h1>
+        <p class="text-muted-strong mb-0">Veja componentes, carga horaria, periodo e professor responsavel em uma unica area.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a class="btn btn-primary" asp-controller="Disciplina" asp-action="CriarDisciplina">Nova disciplina</a>
+        <a class="btn btn-outline-secondary" asp-controller="Disciplina" asp-action="AtualizarDisciplina">Editar por ID</a>
+    </div>
+</div>
+
+<div class="curriculum-grid">
+    @foreach (var item in Model)
+    {
+        <article class="curriculum-card">
+            <div class="d-flex justify-content-between gap-3">
+                <div>
+                    <span class="module-tag">@item.Periodo</span>
+                    <h2>@item.Nome</h2>
+                </div>
+                <div class="hours-badge">@item.CargaHoraria h</div>
+            </div>
+            <p>Professor: @(item.Professor?.Nome ?? "Nao vinculado")</p>
+            <form method="post" asp-action="ExcluirDisciplina" asp-route-id="@item.Id" class="d-inline">
+                @Html.AntiForgeryToken()
+                <button type="submit" class="btn btn-sm btn-outline-danger">Excluir</button>
+            </form>
+        </article>
+    }
+</div>

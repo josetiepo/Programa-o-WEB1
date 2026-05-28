@@ -1,0 +1,48 @@
+@model Disciplina
+
+@{
+    ViewData["Title"] = "Atualizar disciplina";
+}
+
+<div class="form-panel">
+    <span class="panel-label">Edicao por identificador</span>
+    <h1 class="section-title">Atualizar disciplina</h1>
+    <p class="form-intro">Informe o ID da disciplina e atualize os dados vinculados ao componente curricular.</p>
+    <form method="post" asp-controller="Disciplina" asp-action="AtualizarDisciplina">
+        <div class="form-group">
+            <label asp-for="Id">Id da disciplina</label>
+            <input asp-for="Id" class="form-control" type="number" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Nome"></label>
+            <input asp-for="Nome" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CargaHoraria">Carga horaria</label>
+            <input asp-for="CargaHoraria" class="form-control" type="number" min="1" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ProfessorId">Id do professor</label>
+            <input asp-for="ProfessorId" class="form-control" type="number" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Periodo"></label>
+            <select asp-for="Periodo" class="form-control">
+                <option value="1 periodo">1 periodo</option>
+                <option value="2 periodo">2 periodo</option>
+                <option value="3 periodo">3 periodo</option>
+                <option value="4 periodo">4 periodo</option>
+                <option value="5 periodo">5 periodo</option>
+                <option value="6 periodo">6 periodo</option>
+                <option value="7 periodo">7 periodo</option>
+                <option value="8 periodo">8 periodo</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary">Salvar alteracoes</button>
+    </form>
+</div>

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 820" role="img" aria-label="Campus academico profissional com predios, estudantes e area verde">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#dbe9ea"/>
+      <stop offset=".58" stop-color="#eef4f2"/>
+      <stop offset="1" stop-color="#d8e3dd"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2d6f76"/>
+      <stop offset="1" stop-color="#18324a"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="18" flood-color="#18324a" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="1400" height="820" fill="url(#sky)"/>
+  <path d="M0 640c168-64 282-48 428-4 162 49 323 39 487-18 184-65 336-53 485 4v198H0z" fill="#8fb99e"/>
+  <path d="M0 700c162-44 312-37 454 12 165 57 338 51 520-16 154-56 291-50 426 2v122H0z" fill="#5e8f78"/>
+  <path d="M190 606h1020v88H190z" fill="#c2b28d"/>
+  <path d="M246 602h908v42H246z" fill="#e5dcc4"/>
+  <g filter="url(#shadow)">
+    <path d="M340 250h370v354H340z" fill="#f9fbfa"/>
+    <path d="M710 190h344v414H710z" fill="#eef3f4"/>
+    <path d="M294 318h118v286H294z" fill="#e8eeef"/>
+    <path d="M1048 308h92v296h-92z" fill="#e3ebec"/>
+    <path d="M318 222h420l-210-88z" fill="#d39b2a"/>
+    <path d="M690 166h388l-194-82z" fill="#b87d26"/>
+    <path d="M380 604V330h292v274z" fill="#ffffff"/>
+    <path d="M742 604V260h250v344z" fill="#ffffff"/>
+    <path d="M428 604V468h72v136zM552 604V468h72v136zM815 604V460h96v144z" fill="#18324a"/>
+    <g fill="url(#glass)">
+      <rect x="420" y="354" width="64" height="58" rx="4"/>
+      <rect x="526" y="354" width="64" height="58" rx="4"/>
+      <rect x="790" y="292" width="58" height="58" rx="4"/>
+      <rect x="890" y="292" width="58" height="58" rx="4"/>
+      <rect x="790" y="376" width="58" height="58" rx="4"/>
+      <rect x="890" y="376" width="58" height="58" rx="4"/>
+      <rect x="320" y="372" width="54" height="52" rx="4"/>
+      <rect x="1070" y="368" width="44" height="52" rx="4"/>
+    </g>
+    <path d="M264 604h912" stroke="#18324a" stroke-width="18" stroke-linecap="round"/>
+  </g>
+  <path d="M205 668c118-38 236-38 354 0s236 38 354 0 236-38 354 0" fill="none" stroke="#f3c969" stroke-width="10" opacity=".85"/>
+  <g fill="#18324a">
+    <circle cx="226" cy="605" r="15"/>
+    <path d="M210 626h32l10 54h-52z"/>
+    <circle cx="1200" cy="604" r="15"/>
+    <path d="M1184 626h32l10 54h-52z"/>
+  </g>
+  <g fill="#ffffff" opacity=".9">
+    <path d="M158 152h86v18h-86zM174 184h150v16H174z"/>
+    <path d="M1080 132h132v18h-132zM1036 166h190v16h-190z"/>
+  </g>
+</svg>

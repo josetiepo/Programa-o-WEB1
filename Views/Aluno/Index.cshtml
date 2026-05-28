@@ -1,0 +1,43 @@
+@model List<Academico.Models.Aluno>
+
+@{
+    ViewData["Title"] = "Alunos";
+}
+
+<div class="page-heading">
+    <div>
+        <span class="panel-label">Modulo discente</span>
+        <h1 class="section-title mb-1">Alunos cadastrados</h1>
+        <p class="text-muted-strong mb-0">Consulte registros, corrija dados e acompanhe a identificacao de cada estudante.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a class="btn btn-primary" asp-controller="Aluno" asp-action="CriarAluno">Novo aluno</a>
+    </div>
+</div>
+
+<div class="record-list">
+    @foreach (var item in Model)
+    {
+        <article class="record-card">
+            <div class="record-main">
+                <div class="entity-icon">@item.Nome.FirstOrDefault()</div>
+                <div>
+                    <span class="module-tag">Matricula @item.Matricula</span>
+                    <h2>@item.Nome</h2>
+                    <p>@item.Curso</p>
+                </div>
+            </div>
+            <div class="record-meta">
+                <span>Nascimento: @item.DataNascimento.ToString("dd/MM/yyyy")</span>
+                <span>CPF: @item.Cpf</span>
+            </div>
+            <div class="record-actions">
+                <a class="btn btn-sm btn-outline-secondary" asp-action="AtualizarAluno" asp-route-id="@item.Id">Editar</a>
+                <form method="post" asp-action="ExcluirAluno" asp-route-id="@item.Id" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Excluir</button>
+                </form>
+            </div>
+        </article>
+    }
+</div>

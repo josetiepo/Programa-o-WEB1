@@ -1,0 +1,43 @@
+@model List<Academico.Models.Professor>
+
+@{
+    ViewData["Title"] = "Professores";
+}
+
+<div class="page-heading">
+    <div>
+        <span class="panel-label">Modulo docente</span>
+        <h1 class="section-title mb-1">Corpo de professores</h1>
+        <p class="text-muted-strong mb-0">Mantenha a equipe docente organizada por area, SIAPE e dados de identificacao.</p>
+    </div>
+    <div class="d-flex gap-2">
+        <a class="btn btn-primary" asp-controller="Professor" asp-action="CriarProfessor">Novo professor</a>
+    </div>
+</div>
+
+<div class="record-list record-list-two">
+    @foreach (var item in Model)
+    {
+        <article class="record-card teacher-card">
+            <div class="record-main">
+                <div class="entity-icon">@item.Nome.FirstOrDefault()</div>
+                <div>
+                    <span class="module-tag">@item.Area</span>
+                    <h2>@item.Nome</h2>
+                    <p>SIAPE @item.Siape</p>
+                </div>
+            </div>
+            <div class="record-meta">
+                <span>Nascimento: @item.DataNascimento.ToString("dd/MM/yyyy")</span>
+                <span>CPF: @item.Cpf</span>
+            </div>
+            <div class="record-actions">
+                <a class="btn btn-sm btn-outline-secondary" asp-action="AtualizarProfessor" asp-route-id="@item.Id">Editar</a>
+                <form method="post" asp-action="ExcluirProfessor" asp-route-id="@item.Id" class="d-inline">
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-sm btn-outline-danger">Excluir</button>
+                </form>
+            </div>
+        </article>
+    }
+</div>

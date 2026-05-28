@@ -1,0 +1,43 @@
+@model Academico.Models.DisciplinaViewModel
+
+@{
+    ViewData["Title"] = "Cadastrar disciplina";
+}
+
+<div class="form-panel">
+    <span class="panel-label">Nova oferta curricular</span>
+    <h1 class="section-title">Cadastrar disciplina</h1>
+    <p class="form-intro">Monte o componente curricular informando periodo, carga horaria e professor responsavel.</p>
+    <form method="post" asp-controller="Disciplina" asp-action="CriarDisciplina">
+        <div class="form-group">
+            <label asp-for="Nome"></label>
+            <input asp-for="Nome" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="CargaHoraria">Carga horaria</label>
+            <input asp-for="CargaHoraria" type="number" min="1" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ProfessorSelecionadoId">Professor</label>
+            <select asp-for="ProfessorSelecionadoId" asp-items="@ViewBag.Professor" class="form-control"></select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Periodo"></label>
+            <select asp-for="Periodo" class="form-control">
+                <option value="1 periodo">1 periodo</option>
+                <option value="2 periodo">2 periodo</option>
+                <option value="3 periodo">3 periodo</option>
+                <option value="4 periodo">4 periodo</option>
+                <option value="5 periodo">5 periodo</option>
+                <option value="6 periodo">6 periodo</option>
+                <option value="7 periodo">7 periodo</option>
+                <option value="8 periodo">8 periodo</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Salvar disciplina</button>
+    </form>
+</div>
